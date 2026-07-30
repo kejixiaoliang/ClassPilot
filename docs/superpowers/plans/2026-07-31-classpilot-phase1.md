@@ -6,7 +6,7 @@
 
 **Architecture:** React + TypeScript 构建 Web 界面，Go 单文件程序仅监听 `127.0.0.1` 并提供本地 HTTP API，SQLite 与附件保存在程序目录外部。前端只依赖稳定 API，不直接访问 SQLite、Windows 路径或本地文件系统。
 
-**Tech Stack:** Go 1.26、`net/http`、`modernc.org/sqlite`、`excelize/v2`、React 19.2、TypeScript 7.0、Vite 8.2、React Router 7、TanStack Query 5、Zod 4、Vitest 4、Playwright 1.62、SQLite。
+**Tech Stack:** Go 1.26、`net/http`、`modernc.org/sqlite`、`excelize/v2`、React 19.2、TypeScript 7.0、Vite 8.2、浏览器 History API、TanStack Query 5、Zod 4、Vitest 4、Playwright 1.62、SQLite。
 
 ## Global Constraints
 
@@ -247,7 +247,7 @@ Run:
 
 ```powershell
 Set-Location web
-npm install react@19.2.8 react-dom@19.2.8 react-router-dom@7.18.2 "@tanstack/react-query@5.101.4" zod@4.4.3
+npm install react@19.2.8 react-dom@19.2.8 "@tanstack/react-query@5.101.4" zod@4.4.3
 npm install --save-dev typescript@7.0.2 vite@8.2.0 vitest@4.1.10 "@playwright/test@1.62.0" "@vitejs/plugin-react" "@testing-library/react" "@testing-library/jest-dom" jsdom
 npm test -- --run
 npm run build
@@ -266,6 +266,8 @@ npm --prefix web run build
 ```
 
 Expected: 全部 PASS。
+
+安全说明：React Router 在计划执行时存在尚未覆盖完整安全公告范围的版本冲突，而且第一阶段不需要服务端路由能力，因此改用浏览器 History API 的小型本地路由封装，并保持 `npm audit` 为零漏洞。
 
 - [ ] **Step 6: 中文提交**
 

@@ -23,6 +23,7 @@
 node_modules/
 dist/
 coverage/
+.cache/
 
 # Go 构建产物
 *.exe

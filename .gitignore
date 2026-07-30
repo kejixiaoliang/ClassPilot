@@ -1,0 +1,36 @@
+# ClassPilot 真实业务数据
+/data/
+/attachments/
+/imports/
+/exports/
+/backups/
+/logs/
+
+# 本地数据库及其临时文件
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+
+# 环境变量与本地配置
+.env
+.env.*
+!.env.example
+
+# 前端构建与依赖
+node_modules/
+dist/
+coverage/
+
+# Go 构建产物
+*.exe
+*.test
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+

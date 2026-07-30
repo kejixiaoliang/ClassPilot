@@ -13,6 +13,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/kejixiaoliang/ClassPilot/internal/api"
 	"github.com/kejixiaoliang/ClassPilot/internal/app"
 	"github.com/kejixiaoliang/ClassPilot/internal/server"
 	webassets "github.com/kejixiaoliang/ClassPilot/web"
@@ -69,6 +70,7 @@ func run() error {
 	handler := server.New(server.Config{
 		Token:    token,
 		ReadOnly: runtime.ReadOnly,
+		API:      api.New(runtime.DB),
 		Static:   http.FileServer(http.FS(dist)),
 	})
 	httpServer := &http.Server{

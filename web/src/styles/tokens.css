@@ -1,0 +1,15 @@
+:root {
+  --ink: #17212b;
+  --ink-soft: #50606e;
+  --paper: #f6f1e7;
+  --paper-deep: #ebe2d1;
+  --canvas: #dfe7e6;
+  --navy: #18384a;
+  --navy-light: #31596c;
+  --seal: #b84335;
+  --line: rgba(23, 33, 43, 0.13);
+  --white: #fffdf8;
+  --success: #356a53;
+  --radius: 3px;
+  --shadow: 0 18px 45px rgba(25, 48, 60, 0.12);
+}
